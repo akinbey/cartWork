@@ -1,0 +1,14 @@
+<p>{{cartService.getUserCart()|json}}</p>
+
+
+<div *ngIf="cartService.getSelectedUser()" >
+    <h2>{{ cartService.getSelectedUser()?.fullName }}</h2>
+    <div *ngFor="let items of cartService.getUserCart()?.items">
+      <div>{{ items.productName }}</div>
+      <div >Fiyat: {{ items.productPrice | currency }}</div> 
+      <div>Miktar: {{ items.count }}</div>
+    </div>
+</div>
+  
+
+

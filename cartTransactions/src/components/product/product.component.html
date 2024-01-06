@@ -1,0 +1,79 @@
+<div style="display: flex;" *ngFor="let product of productList">
+    <div class="container">
+        <h2>Basic</h2>
+        <div class="card" style="position: relative;">
+            <div class="card-body">
+                <strong>Product Name: </strong>{{product.name}}
+            </div>
+            <div class="card-body"><img style="margin-left: 80px;" [src]="product.image.small"></div>
+            <div class="card-body"><strong>Description: </strong>{{product.description}}</div>
+            <div class="card-body"><strong>Price: </strong>{{product.price}}</div>
+            <div style="margin-left: 100px;" class="card-text"><strong>Is Active:</strong> {{product.isActive}}</div>
+            <button style="padding: 7px; margin: 5px; " class="btn btn-success rounded mb-4"
+                (click)="addCart(product)">Sepete Ekle</button>
+            <div style="display: flex; justify-content: space-around; margin-top: 15px;">
+                <button style="position: absolute; bottom: 0; left: 0;" class="btn btn-sm btn-danger mt-5">-</button>
+                <button style="position: absolute; bottom: 0; right: 0;" class="btn btn-sm btn-primary"
+                    (click)="addCart(product)">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of productList">
+            <div class="card mb-3">
+                <img [src]="product.image.small" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <p class="card-text"><strong>Category ID:</strong> {{product.categoryId}}</p>
+                    <p class="card-text"><strong>Price:</strong> {{product.price}}</p>
+                    <p class="card-text"><strong>Created Date:</strong> {{product.createdDate | date:'dd/MM/yyyy hh:mm'}}</p>
+                    <p class="card-text"><strong>Is Active:</strong> {{product.isActive}}</p>
+                    <button class="btn btn-success" (click)="addCart(product)">Sepete Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div
+    class="table-responsive"
+>
+    <table
+        class="table table-primary"
+    >
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sepete Ekle</th>
+                <th scope="col">Image</th>
+                <th scope="col">Category Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>            
+                <th scope="col">Created Date</th>
+                <th scope="col">Is Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let product of productList">
+                <td scope="row">{{product.id}}</td>
+                <td><button class="btn btn-sm btn-success" (click)="addCart(product)">Sepete Ekle</button></td>
+                <td><img [src]="product.image.small" alt=""></td>
+                <td>{{product.categoryId}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.createdDate|date:'dd/MM/yyyy hh:mm'}}</td>
+                <td>{{product.isActive}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
